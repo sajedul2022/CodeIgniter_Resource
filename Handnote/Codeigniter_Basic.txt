@@ -1,0 +1,13 @@
+1. Installing CodeIgniter
+	composer create-project codeigniter4/appstarter ci-news
+
+2.Running Development Server
+	php spark serve
+
+
+
+3. controlller make
+	php spark make:controller pages
+
+4. Make model
+	php spark make:model UserModel
