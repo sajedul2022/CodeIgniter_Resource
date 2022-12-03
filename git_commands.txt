@@ -1,0 +1,25 @@
+create a new repository on the command line
+
+git init
+git add README.md
+git commit -m "first commit"
+git branch -M main
+git remote add origin https://github.com/sajedul2022/CodeIgniter_Resource.git
+git push -u origin main
+
+
+-----
+
+ push an existing repository from the command line
+
+git commit -m "first commit"
+git remote add origin https://github.com/sajedul2022/CodeIgniter_Resource.git
+git branch -M main
+git push -u origin main
+
+
+-----------------------
+
+HTML, CSS, Bootstrap, Javascript, Jquery, PHP, Mysql, PHP_mysql_Project, Wordpress, Laravel, codigniter, Angular js, vue js, React js.
+
+------------------------
