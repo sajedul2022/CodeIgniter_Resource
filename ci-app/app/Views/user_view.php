@@ -11,7 +11,7 @@
 <body>
     <div class="container mt-4">
         <div class="d-flex justify-content-end">
-            <a href="<?php echo site_url('/user-form') ?>" class="btn btn-success mb-2">Add User</a>
+            <a href="<?php echo site_url('/users/add') ?>" class="btn btn-success mb-2">Add User</a>
         </div>
         <?php
         if (isset($_SESSION['msg'])) {
@@ -39,8 +39,8 @@
                                 <td><?php echo $user['name']; ?></td>
                                 <td><?php echo $user['email']; ?></td>
                                 <td>
-                                    <a href="<?php echo base_url('edit-view/' . $user['id']); ?>" class="btn btn-primary btn-sm">Edit</a>
-                                    <a href="<?php echo base_url('delete/' . $user['id']); ?>" class="btn btn-danger btn-sm">Delete</a>
+                                    <a href="<?php echo base_url('users/edit/' . $user['id']); ?>" class="btn btn-primary btn-sm">Edit</a>
+                                    <a href="<?php echo base_url('users/delete/' . $user['id']); ?>" class="btn btn-danger btn-sm">Delete</a>
                                 </td>
                             </tr>
                         <?php endforeach; ?>
@@ -49,6 +49,7 @@
 
                 </tbody>
             </table>
+            
         </div>
     </div>
 

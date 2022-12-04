@@ -40,7 +40,16 @@ $routes->get('/hello', 'Pages::index');
 $routes->get('/view', 'Pages::view');
 
 // CRUD RESTful Routes
-$routes->get('users-list', 'UserCrud::index');
+$routes->get('users', 'UserCrud::index');
+$routes->get('users/add', 'UserCrud::create');
+$routes->post('users/submit', 'UserCrud::store');
+$routes->get('users/delete/(:num)', 'UserCrud::delete/$1');
+$routes->get('users/edit/(:num)', 'UserCrud::edit/$1');
+$routes->post('users/update', 'UserCrud::update');
+
+// validation
+
+$routes->match(['get', 'post'], 'users/submit', 'UserCrud::store');
 
 /*
  * --------------------------------------------------------------------
