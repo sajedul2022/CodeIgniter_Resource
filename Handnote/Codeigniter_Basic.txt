@@ -11,3 +11,21 @@
 
 4. Make model
 	php spark make:model UserModel
+
+// for auto route remove
+
+1. Routes.php 
+
+	$routes->setAutoRoute(true);
+	
+	// $routes->get('/', 'Home::index'); // comment
+
+
+2. public folder ->  .htaccess and index.php  kickout root file
+
+Go to index.php
+
+require FCPATH . 'app/Config/Paths.php'; 	// (../) remove 
+
+go to browse http://localhost/foldername
+
