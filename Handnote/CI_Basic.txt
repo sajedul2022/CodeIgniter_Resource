@@ -1,0 +1,42 @@
+-------------   Basic CLI  ---------------
+
+1. Installing CodeIgniter
+	composer create-project codeigniter4/appstarter ci-news
+
+2.Running Development Server
+	php spark serve
+
+3. controlller make
+	php spark make:controller pages
+
+4. Make model
+	php spark make:model UserModel
+
+5. migration
+	php spark make:migration Student
+
+ //Migrates a database group with all available migrations:
+	php spark migrate
+
+	// fresh 
+	php spark migrate:refresh
+
+6. --restful controller
+	php spark make:controller student --restful
+-------------   for auto route remove ---------------
+
+1. Routes.php 
+
+	$routes->setAutoRoute(true);
+	
+	// $routes->get('/', 'Home::index'); // comment
+
+
+2. public folder ->  .htaccess and index.php  kickout root file
+
+Go to index.php
+
+require FCPATH . 'app/Config/Paths.php'; 	// (../) remove 
+
+go to browse http://localhost/foldername
+
