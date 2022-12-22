@@ -19,6 +19,8 @@
                         <th scope="col">Email</th>
                         <th scope="col">Phone</th>
                         <th scope="col">Address</th>
+                        <th scope="col">Edit</th>
+                        <th scope="col">Delete</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -30,6 +32,12 @@
                             <td> <?php echo $student['email']; ?> </td>
                             <td> <?php echo $student['phone']; ?> </td>
                             <td> <?php echo $student['address']; ?> </td>
+                            <td> 
+                                <a  class="btn btn-primary" href="student/edit/<?= $student['id'] ?>">Edit</a> 
+                            </td>
+                            <td> 
+                                <a class="btn btn-danger" href="student/delete/<?= $student['id'] ?>">Delete</a> 
+                            </td>
                         </tr>
 
                     <?php  } ?>
@@ -37,11 +45,7 @@
                 </tbody>
             </table>
 
-
-
-
-
-
+            <a href="/student/new" class="btn btn-primary" >Add Student </a>
         </div>
     </div>
 

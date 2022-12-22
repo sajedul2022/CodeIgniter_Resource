@@ -12,7 +12,9 @@ class Student extends ResourceController
      *
      * @return mixed
      */
-    public function index(){
+    public function index()
+    {
+        $data['title'] = "All Students";
         $modeldata = new StudentModel();
         $data['students'] = $modeldata->findAll();
         // print_r($data);
@@ -36,7 +38,8 @@ class Student extends ResourceController
      */
     public function new()
     {
-        //
+        $data['title'] = "Add new Student";
+        return view('students/add_student', $data);
     }
 
     /**
@@ -44,9 +47,35 @@ class Student extends ResourceController
      *
      * @return mixed
      */
-    public function create()
-    {
-        //
+    public function create(){
+
+        $model = new StudentModel();
+
+        // ............... get form data ...............
+        // echo $this->request->getPost('name');
+
+        // $data['name'] = $this->request->getPost('name');
+        // $data['phone'] = $this->request->getPost('phone');
+        // $data['email'] = $this->request->getPost('email');
+        // $data['address'] = $this->request->getPost('address');
+
+        // or
+
+        $data = $this->request->getPost();
+        // print_r($data);
+
+        $model->save($data);
+
+        // Redirect 
+
+        // $data['students'] = $model->findAll();
+        // return view("students/student_list", $data);
+
+        // return redirect()->back();
+        // return redirect("Student"); // controller class name
+
+        return redirect()->to('/student');
+
     }
 
     /**
@@ -54,9 +83,11 @@ class Student extends ResourceController
      *
      * @return mixed
      */
-    public function edit($id = null)
-    {
-        //
+    public function edit($id = null){
+        $model = new StudentModel();
+        $data['student'] = $model->find($id);
+
+        return view("students/edit_student", $data);
     }
 
     /**
@@ -64,9 +95,14 @@ class Student extends ResourceController
      *
      * @return mixed
      */
-    public function update($id = null)
-    {
-        //
+    public function update($id = null){
+
+        $model = new StudentModel();
+        $data = $this->request->getPost();
+
+        if($model->update($id, $data)){
+            return redirect()->to('/student');
+        }
     }
 
     /**
@@ -74,8 +110,10 @@ class Student extends ResourceController
      *
      * @return mixed
      */
-    public function delete($id = null)
-    {
-        //
+    public function delete($id = null){
+
+        $model = new StudentModel();
+        $model->delete($id);
+        return redirect()->to('student');
     }
 }

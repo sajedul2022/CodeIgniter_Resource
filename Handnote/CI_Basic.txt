@@ -6,6 +6,8 @@
 2.Running Development Server
 	php spark serve
 
+2.1.  CI_ENVIRONMENT = development  // erorr show and more set up .env file
+
 3. controlller make
 	php spark make:controller pages
 
@@ -22,7 +24,40 @@
 	php spark migrate:refresh
 
 6. --restful controller
+
 	php spark make:controller student --restful
+
+	go to Routes.php 
+	$routes->setAutoRoute(true);
+	$routes->resource('Student');
+
+7. cli list show: 
+	php spark
+
+
+
+
+
+
+-------------- For redirect ------------
+
+
+        $data['students'] = $model->findAll();
+        return view("students/student_list", $data);
+
+		OR
+
+        return redirect()->back();
+
+		OR
+		
+        return redirect("Student"); // controller class name
+
+		OR
+
+
+		return redirect()->to('/student');  // route uri name
+
 -------------   for auto route remove ---------------
 
 1. Routes.php 
