@@ -1,0 +1,17 @@
+		==== CI Production steps ===
+
+1. Public Folder files
+ move to 
+root file
+
+2. index.php
+	require FCPATH . '../app/Config/Paths.php';
+change
+	require FCPATH . './app/Config/Paths.php';
+
+3. App.php
+public $baseURL = 'http://localhost/ci4-CRUD';
+
+4. anchor link change
+
+	href="<?= base_url() ?>/about"
